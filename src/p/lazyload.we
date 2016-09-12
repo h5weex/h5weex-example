@@ -1,0 +1,103 @@
+<template>
+    <list class="container" loadmoreoffset="960" onloadmore="loadMore" show-scrollbar="false" onappear="appear" ondisappear="disappear">
+        <double-image id="component-0"></double-image>
+        <double-image id="component-1"></double-image>
+        <double-image id="component-2"></double-image>
+        <double-image id="component-3"></double-image>
+        <double-image id="component-4"></double-image>
+        <double-image id="component-5"></double-image>
+        <double-image id="component-6"></double-image>
+        <double-image id="component-7"></double-image>
+        <double-image id="component-8"></double-image>
+        <double-image id="component-9"></double-image>
+        <double-image id="component-10"></double-image>
+        <double-image id="component-11"></double-image>
+        <double-image id="component-12"></double-image>
+        <double-image id="component-13"></double-image>
+        <double-image id="component-14"></double-image>
+        <double-image id="component-15"></double-image>
+        <double-image id="component-16"></double-image>
+        <double-image id="component-17"></double-image>
+        <double-image id="component-18"></double-image>
+        <double-image id="component-19"></double-image>
+    </list>
+</template>
+
+<style>
+    .container{
+        width: 750px;
+        background-color: #eeeeee;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 50px;
+    }
+</style>
+
+<script>
+    require('../c/double-image.we');
+
+    module.exports = {
+        data: {
+            pointer: 0,
+            shouldStop: true,
+            picUrlList: [
+                {
+                    pic: "https://gw.alicdn.com/imgextra/i2/263662065/TB2VVk4jFXXXXbWXpXXXXXXXXXX_!!263662065.jpg",
+                    url: "//h5.m.taobao.com/wirelessshop/decorator/view.html?userId=123&pageId=46&ttt=111&isMock=true#222222"
+                }, {
+                    pic: "https://gw.alicdn.com/tps/i3/TB1RqA7HFXXXXbbXFXXrVZt0FXX-640-200.jpg",
+                    url: "//h5.wapa.taobao.com/wirelessshop/decorator/view_h5.html?userId=123&pageId=46&ttt=111&isMock=true#222222"
+                }
+            ]
+        },
+        methods: {
+            appear: function () {
+                this.$broadcast('sliderStart');
+                console.log('appear');
+            },
+            disappear: function () {
+                this.$broadcast('sliderStop');
+                console.log('disappear');
+            },
+            loadMore: function (e) {
+                console.log('loadmore');
+                if(this.shouldStop) {
+                    return;
+                }
+
+                for(var i = 0; i < 10; i++) {
+                    var compVm = this.$vm('component-' + this.pointer);
+                    if(!compVm) {
+                        this.shouldStop = !0;
+                        return;
+                    }
+                    if(!compVm.render) {
+                        this.pointer++;
+                        continue;
+                    }
+                    compVm.render(this.picUrlList);
+                    this.pointer++;
+                }
+            }
+        },
+        ready: function (){
+            console.log('ready');
+            this.shouldStop = false;
+
+            for(var i = 0; i < 10; i ++) {
+                var compVm = this.$vm('component-' + i);
+                //console.log(compVm);
+                if(!compVm) {
+                    this.pointer++;
+                    continue;
+                }
+                if(!compVm.render) {
+                    this.pointer++;
+                    continue;
+                }
+                compVm.render(this.picUrlList);
+                this.pointer++;
+            }
+        }
+    };
+</script>
