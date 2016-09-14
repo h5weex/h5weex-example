@@ -1,0 +1,55 @@
+<template>
+    <scroller>
+        <itemlist mds="{{dataSource[0]}}" gdc="{{golbalData}}"></itemlist>
+        <promotion mds="{{dataSource[1]}}" gdc="{{golbalData}}"></promotion>
+    </scroller>
+</template>
+
+<script>
+require('../c/itemlist.we');
+require('../c/promotion.we');
+</script>
+
+<script>
+    module.exports = {
+        data: {
+            golbalData: {
+                ownerId: 2202220535
+            },
+            dataSource: [
+                {
+                    itemList: [
+                        {
+                            title:"测试宝贝1测试宝贝1测试宝贝1测试宝贝1",
+                            pic_url:"//gw.alicdn.com/bao/uploaded/i1/2202220535/TB2du8TqFXXXXa1XpXXXXXXXXXX_!!2202220535.jpg",
+                            url:"https://www.taobao.com/",
+                            price:"11.50"
+                        },
+                        {
+                            title:"测试宝贝2测试宝贝1测试宝贝1测试宝贝1",
+                            pic_url:"//gw.alicdn.com/bao/uploaded/i2/2202220535/TB25odWqFXXXXaxXpXXXXXXXXXX_!!2202220535.jpg",
+                            url:"https://www.taobao.com/",
+                            price:"22.30"
+                        },
+                        {
+                            title:"测试宝贝3测试宝贝1测试宝贝1测试宝贝1",
+                            pic_url:"//gw.alicdn.com/bao/uploaded/i1/2202220535/TB2du8TqFXXXXa1XpXXXXXXXXXX_!!2202220535.jpg_200x200",
+                            url:"https://www.taobao.com/",
+                            price:"22.00"
+                        }
+                    ]
+                },
+                {
+                    ticketUrl: 'http://www.taobao.com',
+                    ticketDesc: '100'
+                }
+            ]
+        },
+        created: function (){
+            var vm = this;
+        },
+        ready: function () {
+            console.log(this.dataSource[0],this.dataSource[1]);
+        }
+    };
+</script>

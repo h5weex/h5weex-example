@@ -1,0 +1,103 @@
+<template>
+    <div data-role="itemlist">
+        <div class="wrapper" if="{{mds.itemList.length}}">
+            <div repeat="{{mds.itemList}}" url="{{url}}" class="item_url" onclick="goTargetUrl">
+                <image src="{{pic_url}}" class="item_img"></image>
+                <div class="item_info">
+                    <text class="item_name">{{title}}</text>
+                    <div class="item_price">
+                        <text class="item_price_text">￥</text>
+                        <text class="item_price_text big">{{price.split('.')[0]}}</text>
+                        <text class="item_price_text">{{price.split('.').length > 1 ? '.' + price.split('.')[1] : ''}}</text>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style>
+    .wrapper {
+        width: 750;
+        padding-left: 18;
+        padding-right: 18;
+        margin-bottom: 18;
+        box-sizing: border-box;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .item_url {
+        width: 230;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .item_img {
+        width: 230;
+        height: 230;
+    }
+    .item_info {
+        width: 230;
+        padding-left: 10;
+        padding-right: 10;
+        padding-bottom: 18;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+    .item_name {
+        line-height: 56;
+        height: 56;
+        flex-direction: row;
+        color: #000000;
+        font-size: 28;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        lines: 1;
+    }
+    .item_price {
+        flex-direction: row;
+        align-items: flex-end;
+        height: 40;
+    }
+    .item_price_text {
+        color: #e61616;
+        font-size: 24;
+    }
+    .big {
+        font-size: 32;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            mds: {
+                dataParams: {
+                    "catId": "-1"
+                },
+                itemList: [],
+            },
+            gdc: {
+                "ownerId": 2202220535
+            }
+        },
+        methods: {
+            goTargetUrl: function(e) {
+                require('@weex-module/event').openURL(e.target.attr.url);
+            },
+
+            render: function(ds, gd){
+                var vm = this;
+                if(ds){ vm.mds = ds; }
+                if(gd){ vm.gdc = gd; }
+
+            }
+        },
+        ready: function() {
+            console.log('ready:', this.mds);
+        }
+    };
+</script>
