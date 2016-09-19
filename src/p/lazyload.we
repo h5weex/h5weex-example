@@ -1,5 +1,5 @@
 <template>
-    <list class="container" loadmoreoffset="960" onloadmore="loadMore" show-scrollbar="false" onappear="appear" ondisappear="disappear">
+    <scroller class="container" loadmoreoffset="960" onloadmore="loadMore" show-scrollbar="false" onappear="appear" ondisappear="disappear">
         <double-image id="component-0"></double-image>
         <double-image id="component-1"></double-image>
         <double-image id="component-2"></double-image>
@@ -20,7 +20,7 @@
         <double-image id="component-17"></double-image>
         <double-image id="component-18"></double-image>
         <double-image id="component-19"></double-image>
-    </list>
+    </scroller>
 </template>
 
 <style>

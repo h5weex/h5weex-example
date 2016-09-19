@@ -1,0 +1,105 @@
+<template>
+    <div class="account-item" index="{{$index}}">
+        <div class="account-main">
+
+            <div class="account-logo" onclick="goTargetUrl">
+                <div class="account-logo-border">
+                    <image class="account-logo-pic" src="{{logourl}}"></image>
+                </div>
+            </div>
+
+            <div class="account-info" onclick="goTargetUrl">
+                <text class="desc account-name">{{name}}</text>
+                <text class="desc account-doc">{{reason}}</text>
+                <text class="desc account-fans">粉丝数：{{fans}}</text>
+            </div>
+
+        </div>
+    </div>
+</template>
+
+<style>
+    .account-item {
+        flex-direction: column;
+        width: 750;
+    }
+
+    .account-main {
+        flex-direction: row;
+        padding: 24;
+        padding-left: 0;
+        margin-left: 24;
+        border-width: 0;
+        border-style: solid;
+        border-color: #E7E7E7;
+        border-bottom-width: 1;
+    }
+
+    .account-logo-border {
+        width: 104;
+        height: 104;
+        background-image: url("//gw.alicdn.com/tps/TB1KMYqNXXXXXcoXXXXXXXXXXXX-104-104.png");
+    }
+
+    .account-logo-pic {
+        width: 96;
+        height: 96;
+        margin: 4;
+        align-items: center;
+        justify-content: center;
+        background-color: #cccccc;
+    }
+
+    .account-info {
+        flex: 1;
+        margin-left: 24;
+        margin-right: 24;
+        height: 104;
+    }
+
+    .desc {
+        margin-bottom: 4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        lines: 1;
+    }
+
+    .account-name {
+        margin-top: 4;
+        font-size: 28;
+        color: #3E3E3E;
+        height: 34;
+        font-weight: bold;
+    }
+
+    .account-doc {
+        font-size: 24;
+        color: #5F646E;
+        height: 30;
+    }
+
+    .account-fans {
+        font-size: 20;
+        height: 26;
+        color: #999;
+    }
+</style>
+
+<script>
+module.exports = {
+    data: {
+        logourl: '',
+        reason: '',
+        name: '',
+        fans: 1000,
+        url: ''
+    },
+    methods: {
+        goTargetUrl: function(e) {
+            require('@weex-module/event').openURL(this.url);
+        }
+    }
+}
+</script>

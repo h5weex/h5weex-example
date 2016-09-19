@@ -1,5 +1,5 @@
 <template>
-    <scroller>
+    <scroller show-scrollbar="false">
         <itemlist mds="{{dataSource[0]}}" gdc="{{golbalData}}"></itemlist>
         <promotion mds="{{dataSource[1]}}" gdc="{{golbalData}}"></promotion>
     </scroller>
