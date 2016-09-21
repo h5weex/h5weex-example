@@ -22,35 +22,33 @@
 <body>
   <div id="weex"></div>
   <script>
-  /**
-   * Init weex instance depending on the url params.
-   * There are three ways to load weex bundles, depends on the
-   * parameter 'loader' in the url:
-   *
-   *   + xhr: use XMLHttpRequest. Parameter 'page' should be
-   *   the bundle's url.
-   *   + source: use the transformed code itself. 'page' should
-   *   be the transformed weex bundle.
-   *
-   * @param {String} bundle - It has different meaning depends on
-   *   the type of loader.
-   */
   (function () {
     function getUrlParam (key) {
-      var reg = new RegExp('[?|&]' + key + '=([^&]+)')
-      var match = location.search.match(reg)
-      return match && match[1]
+      var reg = new RegExp('[?|&]' + key + '=([^&]+)');
+      var match = location.search.match(reg);
+      return match && match[1];
     }
 
-    var loader = getUrlParam('loader') || 'xhr'
-    var page = getUrlParam('_wx_tpl') || 'build/index.bundle.js'
+    var loader = getUrlParam('loader') || 'xhr';
+    var page = getUrlParam('_wx_tpl') || '';
 
-    window.weex.init({
-      appId: location.href,
-      loader: loader,
-      source: page,
-      rootId: 'weex'
-    })
+    if(page == ''){
+      var pagelist = ['datalist','lazyload','require','sticky'];
+      var htmlstr = '<h3 style="padding:10px;">该项目的页面有：</h3><ul style="padding:10px;">';
+      for(var i in pagelist){
+        htmlstr += '<li style="height:30px;line-height:30px;"><a href="index.html?_wx_tpl=build/'+pagelist[i]+'.bundle.js">'+pagelist[i]+'.we</a></li>';
+      }
+      htmlstr += '</ul>';
+      document.getElementById('weex').innerHTML = htmlstr;
+    }
+    else {
+      window.weex.init({
+        appId: location.href,
+        loader: loader,
+        source: page,
+        rootId: 'weex'
+      });
+    }
   })();
   </script>
 </body>

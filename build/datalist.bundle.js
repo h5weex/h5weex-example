@@ -44,10 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	;__weex_define__("@weex-component/da6085c79d84d9c1580dd7a4e8d47f8d", [], function(__weex_require__, __weex_exports__, __weex_module__){
+	;__weex_define__("@weex-component/bf451ade7855aab3b77516ef4699dd6e", [], function(__weex_require__, __weex_exports__, __weex_module__){
 
 	;
-	__webpack_require__(2);
+	__webpack_require__(1);
 
 	;
 	__weex_module__.exports = {
@@ -156,7 +156,7 @@
 
 	;__weex_module__.exports.template = __weex_module__.exports.template || {}
 	;Object.assign(__weex_module__.exports.template, {
-	  "type": "scroller",
+	  "type": "list",
 	  "attr": {
 	    "showScrollbar": "false",
 	    "loadmoreoffset": "0"
@@ -281,13 +281,12 @@
 	  }
 	})
 	})
-	;__weex_bootstrap__("@weex-component/da6085c79d84d9c1580dd7a4e8d47f8d", {
+	;__weex_bootstrap__("@weex-component/bf451ade7855aab3b77516ef4699dd6e", {
 	  "transformerVersion": "0.3.1"
 	},undefined)
 
 /***/ },
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ function(module, exports) {
 
 	;__weex_define__("@weex-component/account", [], function(__weex_require__, __weex_exports__, __weex_module__){

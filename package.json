@@ -8,8 +8,10 @@
     "gulp": "~3.9.1",
     "gulp-util": "~3.0.7",
     "gulp-webserver": "~0.9.1",
+    "gulp-replace": "~0.5.4",
     "gulp-weex": "~0.2.1",
     "webpack": "^1.13.1",
+    "glob": "latest",
     "weex-loader": "^0.1.5",
     "weex-html5": "~0.3.2"
   }

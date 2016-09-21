@@ -1,5 +1,5 @@
 <template>
-    <scroller show-scrollbar="false" class="list" onloadmore="loadMore" loadmoreoffset="0">
+    <list show-scrollbar="false" class="list" onloadmore="loadMore" loadmoreoffset="0">
         <refresh class="refresh" display="{{showRefresh}}" onrefresh="onrefresh">
             <text class="loading-text">{{refreshText}}</text>
         </refresh>
@@ -17,7 +17,7 @@
             <loading-indicator class="loading-image" if="{{showLoadingImage}}"></loading-indicator>
             <text class="loading-text">{{loadingText}}</text>
         </loading>
-    </scroller>
+    </list>
 </template>
 
 <style>

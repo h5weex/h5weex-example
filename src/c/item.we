@@ -1,64 +1,78 @@
 <template>
-    <div class="container" data-role="title" onclick="goTargetUrl">
-        <text class="text">{{title}}</text>
-        <image class="image" src="//gw.alicdn.com/tps/i2/T11ftRFpXaXXa8IXfX-14-26.png"></image>
+    <div class="item" data-role="item" onclick="goTargetUrl">
+        <image src="{{pic_url}}" class="item-img"></image>
+        <div class="item-info">
+            <text class="item-name">{{title}}</text>
+            <div class="item-price">
+                <text class="item-price-text">￥</text>
+                <text class="item-price-text big">{{price.split('.')[0]}}</text>
+                <text class="item-price-text">{{price.split('.').length > 1 ? '.' + price.split('.')[1] : ''}}</text>
+            </div>
+        </div>
     </div>
 </template>
 
 <style>
-    .container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 750;
-        height: 88;
-        margin-bottom: 18;
-        padding-left: 18;
-        padding-right: 18;
+    .item {
+        width: 250;
         background-color: #ffffff;
-        border-width: 0;
-        border-style: solid;
-        border-color: #cccccc;
-        border-top-width: 1;
-        border-bottom-width: 1;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .item-img {
+        width: 230;
+        height: 230;
+    }
+    .item-info {
+        width: 230;
+        padding-left: 10;
+        padding-right: 10;
+        padding-bottom: 18;
         box-sizing: border-box;
+        flex-direction: column;
     }
-    .image {
-        width: 14;
-        height: 26;
-        justify-content: center;
-    }
-    .text {
-        width: 700;
-        height: 88;
-        justify-content: center;
-        font-size: 32;
+    .item-name {
+        line-height: 56;
+        height: 56;
+        flex-direction: row;
         color: #000000;
+        font-size: 28;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        lines: 1;
+    }
+    .item-price {
+        flex-direction: row;
+        align-items: flex-end;
+        height: 40;
+    }
+    .item-price-text {
+        color: #e61616;
+        font-size: 24;
+    }
+    .big {
+        font-size: 32;
+        font-weight: bold;
     }
 </style>
 
 <script>
     module.exports = {
         data: {
-            title: '${{title}}',
-            url: '${{url}}'
+            title: '测试宝贝，勿拍',
+            url: '//detail.m.tmall.com/item.htm?id=538817029299',
+            pic_url: '//gw.alicdn.com/tfscom/tuitui/i4/TB1g4hXNXXXXXcVXXXXXXXXXXXX_!!0-item_pic.jpg',
+            price: '100.00'
         },
         methods: {
             goTargetUrl: function() {
-                this.$openURL(this.url);
+                require('@weex-module/event').openURL(this.url);
             }
         },
         created: function() {
-            if(window.location.href.indexOf('localhost')>-1){
-                this.title = defaultData.title;
-            }
+
         }
     };
-</script>
-
-<script>
-var defaultData = {
-    title: '这是一个测试标题',
-    url: 'http://www.taobao.com'
-};
 </script>

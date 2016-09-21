@@ -47,7 +47,7 @@
 	;__weex_define__("@weex-component/69b6507704df2ce8ac70faa97fc0186e", [], function(__weex_require__, __weex_exports__, __weex_module__){
 
 	;
-	    __webpack_require__(1);
+	    __webpack_require__(2);
 
 	    __weex_module__.exports = {
 	        data: function () {return {
@@ -228,7 +228,8 @@
 	},undefined)
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ function(module, exports) {
 
 	;__weex_define__("@weex-component/double-image", [], function(__weex_require__, __weex_exports__, __weex_module__){

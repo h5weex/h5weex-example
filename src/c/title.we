@@ -1,0 +1,65 @@
+<template>
+    <div class="container" data-role="title" onclick="goTargetUrl">
+        <text class="text">{{title}}</text>
+        <image class="image" src="//gw.alicdn.com/tps/i2/T11ftRFpXaXXa8IXfX-14-26.png"></image>
+    </div>
+</template>
+
+<style>
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 750;
+        height: 88;
+        margin-bottom: 18;
+        padding-left: 18;
+        padding-right: 18;
+        background-color: #ffffff;
+        border-width: 0;
+        border-style: solid;
+        border-color: #cccccc;
+        border-top-width: 1;
+        border-bottom-width: 1;
+        box-sizing: border-box;
+    }
+    .image {
+        width: 14;
+        height: 26;
+        justify-content: center;
+    }
+    .text {
+        width: 700;
+        height: 88;
+        justify-content: center;
+        font-size: 32;
+        color: #000000;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {
+            title: '${{title}}',
+            url: '${{url}}'
+        },
+        methods: {
+            goTargetUrl: function() {
+                require('@weex-module/event').openURL(this.url);
+            }
+        },
+        created: function() {
+            if(window.location.href.indexOf('localhost')>-1){
+                this.title = defaultData.title;
+                this.url = defaultData.url;
+            }
+        }
+    };
+</script>
+
+<script>
+var defaultData = {
+    title: '这是一个测试标题',
+    url: 'http://www.taobao.com'
+};
+</script>

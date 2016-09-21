@@ -1,7 +1,9 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     webserver = require('gulp-webserver'),
+    replace = require('gulp-replace'),
     webpack = require('webpack'),
+    glob = require('glob'),
     getWebpackConfig = require('./webpack.config');
 
 /**
@@ -41,6 +43,24 @@ gulp.task('watch', function() {
     gulp.watch(['./src/p/*.we', './src/c/*.we'], ['tojs']);
 });
 
+/**
+ * 生成索引文件
+ * @return {[type]}   [description]
+ */
+gulp.task('index', function () {
+    glob('./src/p/*.we', {}, function(err, files) {
+        var str = '';
+        files.forEach(function(file) {
+            str += "'" + file.replace('./src/p/','').replace('.we','') + "',";
+        });
+        str = str.substring(0,str.length-1);
+
+        gulp.src(['./index.html'])
+            .pipe(replace(/var pagelist = \[(.*?)\];/g, 'var pagelist = ['+str+'];'))
+            .pipe(gulp.dest('./'));
+    });
+});
+
 
 gulp.task('build', ['tojs']);
-gulp.task('default', ['watch', 'webserver']);
+gulp.task('default', ['index', 'watch', 'webserver']);

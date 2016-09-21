@@ -180,7 +180,7 @@
 	            "url": function () {return this.url}
 	          },
 	          "classList": [
-	            "item_url"
+	            "item-url"
 	          ],
 	          "events": {
 	            "click": "goTargetUrl"
@@ -192,19 +192,19 @@
 	                "src": function () {return this.pic_url}
 	              },
 	              "classList": [
-	                "item_img"
+	                "item-img"
 	              ]
 	            },
 	            {
 	              "type": "div",
 	              "classList": [
-	                "item_info"
+	                "item-info"
 	              ],
 	              "children": [
 	                {
 	                  "type": "text",
 	                  "classList": [
-	                    "item_name"
+	                    "item-name"
 	                  ],
 	                  "attr": {
 	                    "value": function () {return this.title}
@@ -213,13 +213,13 @@
 	                {
 	                  "type": "div",
 	                  "classList": [
-	                    "item_price"
+	                    "item-price"
 	                  ],
 	                  "children": [
 	                    {
 	                      "type": "text",
 	                      "classList": [
-	                        "item_price_text"
+	                        "item-price-text"
 	                      ],
 	                      "attr": {
 	                        "value": "￥"
@@ -228,7 +228,7 @@
 	                    {
 	                      "type": "text",
 	                      "classList": [
-	                        "item_price_text",
+	                        "item-price-text",
 	                        "big"
 	                      ],
 	                      "attr": {
@@ -238,7 +238,7 @@
 	                    {
 	                      "type": "text",
 	                      "classList": [
-	                        "item_price_text"
+	                        "item-price-text"
 	                      ],
 	                      "attr": {
 	                        "value": function () {return this.price.split('.').length>1?'.'+this.price.split('.')[1]:''}
@@ -265,17 +265,17 @@
 	    "flexDirection": "row",
 	    "justifyContent": "space-between"
 	  },
-	  "item_url": {
+	  "item-url": {
 	    "width": 230,
 	    "backgroundColor": "#ffffff",
 	    "flexDirection": "column",
 	    "justifyContent": "space-between"
 	  },
-	  "item_img": {
+	  "item-img": {
 	    "width": 230,
 	    "height": 230
 	  },
-	  "item_info": {
+	  "item-info": {
 	    "width": 230,
 	    "paddingLeft": 10,
 	    "paddingRight": 10,
@@ -283,7 +283,7 @@
 	    "boxSizing": "border-box",
 	    "flexDirection": "column"
 	  },
-	  "item_name": {
+	  "item-name": {
 	    "lineHeight": 56,
 	    "height": 56,
 	    "flexDirection": "row",
@@ -295,12 +295,12 @@
 	    "display": "block",
 	    "lines": 1
 	  },
-	  "item_price": {
+	  "item-price": {
 	    "flexDirection": "row",
 	    "alignItems": "flex-end",
 	    "height": 40
 	  },
-	  "item_price_text": {
+	  "item-price-text": {
 	    "color": "#e61616",
 	    "fontSize": 24
 	  },

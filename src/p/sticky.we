@@ -1,0 +1,105 @@
+<template>
+    <list show-scrollbar="false" class="container">
+        <header class="title">
+            <text class="title-text">热门榜单</text>
+            <image class="title-image" src="//gw.alicdn.com/tps/i2/T11ftRFpXaXXa8IXfX-14-26.png"></image>
+        </header>
+        <cell class="itemlist">
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+        </cell>
+        <header class="title">
+            <text class="title-text">热门榜单</text>
+            <image class="title-image" src="//gw.alicdn.com/tps/i2/T11ftRFpXaXXa8IXfX-14-26.png"></image>
+        </header>
+        <cell class="itemlist">
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+        </cell>
+        <header class="title">
+            <text class="title-text">热门榜单</text>
+            <image class="title-image" src="//gw.alicdn.com/tps/i2/T11ftRFpXaXXa8IXfX-14-26.png"></image>
+        </header>
+        <cell class="itemlist">
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+        </cell>
+    </list>
+</template>
+
+<style>
+    .container {
+        width: 750;
+        background-color: #eeeeee;
+        margin-bottom: 28;
+    }
+    .title {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 750;
+        height: 88;
+        padding-left: 18;
+        padding-right: 18;
+        background-color: #ffffff;
+        border-width: 0;
+        border-style: solid;
+        border-color: #cccccc;
+        border-top-width: 1;
+        border-bottom-width: 1;
+        box-sizing: border-box;
+    }
+    .title-image {
+        width: 14;
+        height: 26;
+        justify-content: center;
+    }
+    .title-text {
+        width: 700;
+        height: 88;
+        justify-content: center;
+        font-size: 32;
+        color: #000000;
+    }
+    .itemlist {
+        width: 750;
+        padding-top: 18;
+        margin-bottom: 18;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-width: 0;
+        border-style: solid;
+        border-color: #cccccc;
+        border-bottom-width: 1;
+    }
+</style>
+
+<script>
+    require('../c/item.we');
+</script>
+
+<script>
+    module.exports = {
+        data: {
+        },
+        methods: {
+        },
+        created: function (){
+            var vm = this;
+        }
+    };
+</script>
