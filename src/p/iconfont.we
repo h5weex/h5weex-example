@@ -1,0 +1,78 @@
+<template>
+    <div class="container" data-role="iconfont">
+        <div class="wrapper" style="height: 80">
+            <text class="icon">&#xe603</text>
+            <text class="icon icon-small">&#xe603</text>
+            <text class="icon icon-middle">&#xe603</text>
+            <text class="icon icon-big">&#xe603</text>
+        </div>
+
+        <div class="wrapper">
+            <text class="icon icon-fixed">&#xe61d</text>
+            <text class="text">更多好货</text>
+        </div>
+
+        <div class="wrapper center">
+            <text class="text">更多好货</text>
+            <text class="icon icon-fixed">&#xe623</text>
+        </div>
+
+        <div class="wrapper right">
+            <text class="text">更多好货</text>
+            <text class="icon icon-fixed">&#xe623</text>
+        </div>
+    </div>
+</template>
+
+<style>
+    .icon {
+        font-family: 'iconfont';
+        font-size: 40;
+    }
+    .icon-small {
+        font-size: 50;
+    }
+    .icon-middle {
+        font-size: 60;
+    }
+    .icon-big {
+        font-size: 70;
+    }
+    .wrapper {
+        flex-direction: row;
+        height: 40;
+        margin-top: 20;
+        margin-bottom: 20;
+    }
+    .icon-fixed {
+        margin-top: -8;
+        margin-right: 5;
+        color: #FF0000;
+    }
+    .text {
+        font-size: 32;
+        color: #FF0000;
+        height: 32;
+        line-height: 32;
+    }
+    .center {
+        justify-content: center;
+    }
+    .right {
+        justify-content: flex-end;
+    }
+</style>
+
+<script>
+    module.exports = {
+        data: {},
+        methods: {},
+        created: function (){
+            //目前支持ttf、woff文件，不支持svg、eot类型
+            require('@weex-module/dom').addRule('fontFace', {
+                'fontFamily': 'iconfont',
+                'src': 'url("//at.alicdn.com/t/font_1474166554_8834667.ttf")'
+            });
+        }
+    };
+</script>

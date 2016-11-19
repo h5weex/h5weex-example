@@ -17,7 +17,7 @@
 
   <!-- lib.flexible -->
   <script src="//g.alicdn.com/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
-  <script src="//g.alicdn.com/weex/weex-html5/0.3.2/weex.min.js"></script>
+  <script src="//g.alicdn.com/weex/weex-html5/0.3.5/weex.min.js"></script>
 </head>
 <body>
   <div id="weex"></div>
@@ -33,7 +33,7 @@
     var page = getUrlParam('_wx_tpl') || '';
 
     if(page == ''){
-      var pagelist = ['datalist','lazyload','require','sticky'];
+      var pagelist = ['datalist','iconfont','lazyload','require','sticky'];
       var htmlstr = '<h3 style="padding:10px;">该项目的页面有：</h3><ul style="padding:10px;">';
       for(var i in pagelist){
         htmlstr += '<li style="height:30px;line-height:30px;"><a href="index.html?_wx_tpl=build/'+pagelist[i]+'.bundle.js">'+pagelist[i]+'.we</a></li>';

@@ -31,3 +31,4 @@ fie build
 | lazyload   | 模块懒加载       | 实现一个页面中多个组件的懒加载      |
 | require    | 包含子组件       | 页面中如何包含多个子组件           |
 | sticky     | header触顶后自动fix | 一个结构化页面中不同模块之间的切换，类似面板 |
+| iconfont   | text中的图片字体 | 实现iconfont功能      |
